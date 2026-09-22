@@ -1,1 +1,4 @@
-window.PAYMENT_APP_CONFIG={SUPABASE_URL:"https://YOUR_PROJECT_REF.supabase.co",SUPABASE_ANON_KEY:"YOUR_SUPABASE_ANON_KEY"};
+window.PAYMENT_APP_CONFIG = {
+  SUPABASE_URL: "https://baioxfbpmprvhhyxwjtx.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_UKMVdpGLlOvHD1Y76H7a3w_cJIXsILo"
+};
