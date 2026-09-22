@@ -1,8 +1,6 @@
-# VendorPay Workspace
-1. Run `supabase/schema.sql` in Supabase SQL Editor.
-2. Put the Supabase Project URL and anon/publishable key in `config.js`. Never use the service-role key.
-3. Upload all files, including `.github/workflows/deploy-pages.yml`, to the repository root.
-4. In GitHub Settings > Pages, select GitHub Actions.
-5. Create your account, then disable new signups in Supabase if this is for personal use only.
+# VendorPay v3
+Run `supabase/schema.sql` on a fresh Supabase project, update `config.js`, and deploy to GitHub Pages.
 
-The UI provides a separate visual folder and dedicated view for every vendor, with vendor total, payment count, latest payment, full history, and vendor-specific payment entry.
+The first registered user creates the workspace and becomes Owner. Admins invite users by exact email. Invited users create an account with that email and accept the pending invite. Roles: Viewer, Editor, Admin, Owner.
+
+This schema is a replacement schema for a fresh project. Export existing payments before replacing an older schema.
