@@ -3,61 +3,15 @@ name: Build Android APK
 on:
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
-  build-apk:
+  verify:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build PWA
-        run: npm run build
-
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
-
-      - name: Install Capacitor
+      - name: Show Repository
         run: |
-          npm install @capacitor/core @capacitor/cli @capacitor/android
-
-      - name: Initialize Capacitor (First Run Safe)
-        run: |
-          if [ ! -f capacitor.config.ts ] && [ ! -f capacitor.config.json ]; then
-            npx cap init "Payables360" "com.payables360.app" --web-dir=dist
-          fi
-
-      - name: Add Android Platform
-        run: |
-          if [ ! -d android ]; then
-            npx cap add android
-          fi
-
-      - name: Sync Android
-        run: npx cap sync android
-
-      - name: Build APK
-        run: |
-          cd android
-          chmod +x gradlew
-          ./gradlew assembleDebug
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: Payables360-APK
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          pwd
+          ls -la
+          find . -maxdepth 2 -type f
