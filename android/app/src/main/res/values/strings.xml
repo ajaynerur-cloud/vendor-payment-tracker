@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Payables360</string>
+    <string name="title_activity_main">Payables360</string>
+    <string name="package_name">com.payables360.app</string>
+    <string name="custom_url_scheme">com.payables360.app</string>
+</resources>
